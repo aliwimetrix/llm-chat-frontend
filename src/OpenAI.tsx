@@ -1,4 +1,11 @@
-import { Box, Button, Stack, TextField, Typography, Paper } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+  Paper,
+} from "@mui/material";
 import { useState } from "react";
 
 type Message = {
@@ -16,13 +23,16 @@ export const OpenAI = () => {
     setMessages((prev) => [...prev, { role: "user", text: prompt }]);
 
     try {
-      const res = await fetch("https://llm-chat-backend-black.vercel.app/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ prompt }),
-      });
+      const res = await fetch(
+        "https://llm-chat-backend-black.vercel.app/api/chat",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ prompt }),
+        }
+      );
       const data: { reply: string } = await res.json();
 
       setMessages((prev) => [...prev, { role: "assistant", text: data.reply }]);
@@ -35,6 +45,18 @@ export const OpenAI = () => {
 
   return (
     <Stack sx={{ height: "100vh", bgcolor: "#f7f7f8" }}>
+      <Typography
+        sx={{
+          fontSize: "16px",
+          fontStyle: "italic",
+          textAlign: "center",
+          p: 2,
+          color: "#777",
+          bgcolor: "#ffffff",
+        }}
+      >
+        Developed by: Ali Muhammad (Software Engineer)
+      </Typography>
       <Box
         sx={{
           flexGrow: 1,
@@ -103,17 +125,6 @@ export const OpenAI = () => {
           Send
         </Button>
       </Box>
-      <Typography
-        sx={{
-          fontSize: "16px",
-          fontStyle: "italic",
-          textAlign: "center",
-          p: 1,
-          color: "#777",
-        }}
-      >
-        Developed by: Ali Muhammad (Software Engineer)
-      </Typography>
     </Stack>
   );
 };
