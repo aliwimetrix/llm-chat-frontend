@@ -44,19 +44,20 @@ export const OpenAI = () => {
   };
 
   return (
-    <Stack sx={{ height: "100vh", bgcolor: "#f7f7f8" }}>
-      <Typography
-        sx={{
-          fontSize: "16px",
-          fontStyle: "italic",
-          textAlign: "center",
-          p: 2,
-          color: "#777",
-          bgcolor: "#ffffff",
-        }}
-      >
-        Developed by: Ali Muhammad (Software Engineer)
-      </Typography>
+    <Stack sx={{ height: "100vh", bgcolor: "#333333" }}>
+      <Box sx={{ borderBottom: "1px solid #e5e5e5" }}>
+        <Typography
+          sx={{
+            fontSize: "16px",
+            fontStyle: "italic",
+            textAlign: "center",
+            p: 2,
+            color: "#fff",
+          }}
+        >
+          Developed by: Ali Muhammad (Software Engineer)
+        </Typography>
+      </Box>
       <Box
         sx={{
           flexGrow: 1,
@@ -90,7 +91,7 @@ export const OpenAI = () => {
       <Box
         sx={{
           p: 2,
-          bgcolor: "#ffffff",
+          bgcolor: "#333333",
           borderTop: "1px solid #e5e5e5",
           display: "flex",
           gap: 1,
@@ -110,6 +111,9 @@ export const OpenAI = () => {
             "& .MuiOutlinedInput-root": {
               borderRadius: "20px",
               backgroundColor: "#fafafa",
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: "none",
+              },
             },
           }}
         />
