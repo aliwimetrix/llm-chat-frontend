@@ -45,19 +45,6 @@ export const OpenAI = () => {
 
   return (
     <Stack sx={{ height: "100vh", bgcolor: "#333333" }}>
-      <Box sx={{ borderBottom: "1px solid #e5e5e5" }}>
-        <Typography
-          sx={{
-            fontSize: "16px",
-            fontStyle: "italic",
-            textAlign: "center",
-            p: 2,
-            color: "#fff",
-          }}
-        >
-          Developed by: Ali Muhammad (Software Engineer)
-        </Typography>
-      </Box>
       <Box
         sx={{
           flexGrow: 1,
@@ -128,6 +115,19 @@ export const OpenAI = () => {
         >
           Send
         </Button>
+      </Box>
+      <Box sx={{ borderBottom: "1px solid #e5e5e5" }}>
+        <Typography
+          sx={{
+            fontSize: "16px",
+            fontStyle: "italic",
+            textAlign: "center",
+            p: 2,
+            color: "#fff",
+          }}
+        >
+          Developed by: Ali Muhammad
+        </Typography>
       </Box>
     </Stack>
   );
