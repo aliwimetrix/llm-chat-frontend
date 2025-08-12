@@ -14,7 +14,7 @@ type Message = {
 };
 
 export const OpenAI = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([ { role: "assistant", text: "Hey! How can i help you?" } ]);
   const [prompt, setPrompt] = useState<string>("");
 
   const handleSend = async () => {
